@@ -4,7 +4,7 @@ const More = () => {
   return (
     <div  className="mb-16" >
       <h1 className="text-center text-4xl font-bold ">More</h1>
-      <div style={{backgroundColor:"#fd6200"}} className="py-8 shadow-md  opacity-90">
+      <div style={{backgroundColor:"#fd5400"}} className="py-8 shadow-md  opacity-90">
         <h2 className="text-center text-5xl font-mono font-extrabold mb-4  ">
           Buy second hand bike <br/> online at <br/> Affordable Price
         </h2>
