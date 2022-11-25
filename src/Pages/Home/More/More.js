@@ -2,15 +2,14 @@ import React from "react";
 
 const More = () => {
   return (
-    <div className="mb-16">
-      <h1 className="text-center text-4xl font-bold mb-8">More</h1>
-
-      <div data-theme="black" className="py-8 shadow-md  opacity-90">
-        <h2 className="text-center text-5xl font-mono font-extrabold mt-6 ">
+    <div  className="mb-16" >
+      <h1 className="text-center text-4xl font-bold ">More</h1>
+      <div style={{backgroundColor:"#fd6200"}} className="py-8 shadow-md  opacity-90">
+        <h2 className="text-center text-5xl font-mono font-extrabold mb-4  ">
           Buy second hand bike <br/> online at <br/> Affordable Price
         </h2>
 
-        <p className="text-center text-lg w-1/2 mx-auto my-6">
+        <p className="text-center text-lg w-1/2 mx-auto mb-6">
           There is growing popularity of the second hand bike market in India.
           The majority of the commoners plan to buy second hand bikes for easy
           transportation to combat city traffic. Both in performance and
