@@ -22,8 +22,9 @@ const router = createBrowserRouter([
                 element: <Blog></Blog>
             },
             {
-                path:'/category',
-                element: <Category></Category>
+                path:'/category/:id',
+                element: <Category></Category>,
+                loader: ({params})=> fetch(`http://localhost:5000/usedBikeData/${params.id}`)
             },
             {
                 path: '/login',

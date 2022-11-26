@@ -5,7 +5,7 @@ import SocialLogin from "../Home/SocialLogin/SocialLogin";
 const Login = () => {
   return (
     <div>
-      <div className="hero py-24">
+      <div className="hero py-14">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Login</h1>
@@ -39,7 +39,7 @@ const Login = () => {
                   <small className="label-text-alt link link-hover">
                     Forgot password?{" "}
                     <Link to="/register">
-                      <span className="font-bold"> Register</span>
+                      <span className="font-bold text-primary"> Register</span>
                     </Link>
                   </small>
                 </label>
@@ -51,7 +51,7 @@ const Login = () => {
                   type="submit"
                   value="Login"
                 />
-                <span className="text-center font-bold">or</span>
+                <div className="divider">OR</div>
               </div>
               <SocialLogin></SocialLogin>
             </form>

@@ -5,7 +5,7 @@ import SocialLogin from "../Home/SocialLogin/SocialLogin";
 const Register = () => {
   return (
     <div>
-      <div className="hero py-24">
+      <div className="hero py-12">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Register</h1>
@@ -14,7 +14,7 @@ const Register = () => {
             <form className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text ">Name</span>
                 </label>
                 <input
                   type="text"
@@ -26,7 +26,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text ">Email</span>
                 </label>
                 <input
                   type="email"
@@ -38,18 +38,18 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Select</span>
+                  <span className="label-text font-bold text-primary">Select</span>
                 </label>
-                <div className="ml-2 font-bold">
-                  <div className="flex mb-2">
+                <div className="ml-2 font-bold flex  text-primary ">
+                  <div className="flex">
                     <input
                       type="radio"
                       name="radio-1"
-                      className="radio"
+                      className="radio "
                       value='buyer'
                       checked
                     />
-                    <span className="ml-2">Buyer</span>
+                    <span className="ml-2 mr-6">Buyer</span>
                   </div>
                   <div className="flex">
                     <input type="radio" name="radio-1" className="radio" value='seller' />
@@ -59,7 +59,7 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text ">Password</span>
                 </label>
                 <input
                   type="password"
@@ -72,7 +72,7 @@ const Register = () => {
                   <small className="label-text-alt link link-hover">
                     <Link to="/login">
                       Already have an account?{" "}
-                      <span className="font-bold">Login</span>
+                      <span className="font-bold text-primary">Login</span>
                     </Link>
                   </small>
                 </label>
@@ -80,11 +80,11 @@ const Register = () => {
               </div>
               <div className="form-control ">
                 <input
-                  className="btn btn-outline px-36"
+                  className="btn text-accent px-36"
                   type="submit"
                   value="Register"
                 />
-                <span className="text-center font-bold">or</span>
+                <div className="divider ">OR</div>
               </div>
               <SocialLogin></SocialLogin>
             </form>
