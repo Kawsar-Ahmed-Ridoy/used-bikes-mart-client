@@ -2,9 +2,9 @@ import React from "react";
 
 const More = () => {
   return (
-    <div  className="mb-16" >
-      <h1 className="text-center text-4xl font-bold ">More</h1>
-      <div style={{backgroundColor:"#fd5400"}} className="py-8 shadow-md  opacity-90">
+    <div  className="mb-16 " >
+      <h1 className="text-center text-4xl font-bold mb-6">More</h1>
+      <div  className="py-8 shadow-md  bg-primary text-accent">
         <h2 className="text-center text-5xl font-mono font-extrabold mb-4  ">
           Buy second hand bike <br/> online at <br/> Affordable Price
         </h2>

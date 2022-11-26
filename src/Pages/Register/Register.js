@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SocialLogin from "../Home/SocialLogin/SocialLogin";
 
 const Register = () => {
   return (
@@ -83,7 +84,9 @@ const Register = () => {
                   type="submit"
                   value="Register"
                 />
+                <span className="text-center font-bold">or</span>
               </div>
+              <SocialLogin></SocialLogin>
             </form>
           </div>
         </div>

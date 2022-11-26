@@ -14,7 +14,7 @@ const Categories = () => {
           <div className="card w-96 h-96 py-7 shadow-xl pb-0 mb-4">
           <figure><img src={yamaha} alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="btn text-center text-2xl font-bold mt-4">
+              <h2 className="btn text-center text-2xl font-bold mt-4 text-accent hover:bg-primary border-none ">
                 YAMAHA
               </h2>
             </div>
@@ -22,7 +22,7 @@ const Categories = () => {
           <div className="card w-96 h-96 py-7 shadow-xl pb-0 mb-4">
           <figure><img src={suzuki} alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="btn text-center text-2xl font-bold">
+              <h2 className="btn text-center text-2xl font-bold text-accent hover:bg-primary border-none">
                 Suzuki
               </h2>
             </div>
@@ -30,7 +30,7 @@ const Categories = () => {
           <div className="card w-96 h-96 py-7 shadow-xl pb-0 mb-4">
           <figure><img src={ktm} alt="Shoes" /></figure>
             <div className="card-body">
-              <h2 className="btn text-center text-2xl font-bold">
+              <h2 className="btn text-center text-2xl font-bold text-accent hover:bg-primary border-none">
                 KTM
               </h2>
             </div>

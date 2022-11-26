@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer footer-center  p-10 bg-black opacity-90 text-base-content rounded text-gray-400">
-      <div className="grid grid-flow-col gap-4">
+      <div className="grid grid-flow-col gap-4 text-primary">
         <a href="/" className="link link-hover">
           About us
         </a>
@@ -18,7 +18,7 @@ const Footer = () => {
         </a>
       </div>
       <div>
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-4 text-primary">
           <a href="https://twitter.com" target={"blank"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div>
+      <div className="text-primary">
         <p>Copyright © 2022 - All right reserved by Used Bikes Mart</p>
       </div>
     </footer>

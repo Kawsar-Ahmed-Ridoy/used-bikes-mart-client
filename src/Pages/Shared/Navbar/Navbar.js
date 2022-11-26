@@ -5,7 +5,7 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 px-8 sticky top-0 z-50 bg-gray-100">
         <div className="navbar-start ">
-          <div className="dropdown">
+          <div className="dropdown text-primary">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <Link to="/">
-                <li className="font-bold">Home</li>
+                <li className="font-bold ">Home</li>
               </Link>
               <Link to="/blog">
                 <li className="font-bold">Blog</li>
@@ -37,15 +37,15 @@ const Navbar = () => {
   
           <Link
             to="/"
-            className="btn btn-ghost normal-case text-xl font-serif btn-outline"
+            className="btn btn-primary text-accent text-xl font-serif "
           >
             Used Bikes Mart
           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex text-primary">
           <ul className="menu menu-horizontal p-0">
             <Link to="/">
-              <li className="font-bold mx-4">Home</li>
+              <li className="font-bold mx-4 ">Home</li>
             </Link>
             <Link to="/blog">
               <li className="font-bold mx-4">Blog</li>
@@ -53,7 +53,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-            <Link to="/login" className="btn">
+            <Link to="/login" className="btn btn-primary text-accent">
               LogIn
             </Link>
 
