@@ -1,8 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthProvider";
 import SocialLogin from "../Home/SocialLogin/SocialLogin";
 
 const Register = () => {
+  const [error, setError] = useState("");
+  const { createUser, updateUser } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const radio = form.gander.value;
+    setError("");
+    console.log(name, email, password, radio);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        toast.success('User Created Successfully')
+        const userInfo = {
+          displayName: name,
+          reloadListener: radio,
+          photoURL: radio,
+          tenantId: radio
+        };
+
+        updateUser(userInfo)
+          .then(() => {})
+          .catch((err) => console.log(err));
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((err) => setError(err.message));
+  };
+
   return (
     <div>
       <div className="hero py-12">
@@ -11,7 +51,7 @@ const Register = () => {
             <h1 className="text-5xl font-bold">Register</h1>
           </div>
           <div className="card w-full max-w-sm shadow-2xl bg-base-100 ">
-            <form className="card-body">
+            <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text ">Name</span>
@@ -21,7 +61,7 @@ const Register = () => {
                   name="name"
                   placeholder="Name "
                   className="input input-bordered"
-                  require
+                  required
                 />
               </div>
               <div className="form-control">
@@ -38,21 +78,29 @@ const Register = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold text-primary">Select</span>
+                  <span className="label-text font-bold text-primary">
+                    Select
+                  </span>
                 </label>
                 <div className="ml-2 font-bold flex  text-primary ">
                   <div className="flex">
                     <input
                       type="radio"
-                      name="radio-1"
-                      className="radio "
-                      value='buyer'
-                      checked
+                      name="gander"
+                      className="radio"
+                      value="buyer"
+                      required
                     />
                     <span className="ml-2 mr-6">Buyer</span>
                   </div>
                   <div className="flex">
-                    <input type="radio" name="radio-1" className="radio" value='seller' />
+                    <input
+                      type="radio"
+                      name="gander"
+                      className="radio"
+                      value="seller"
+                      required
+                    />
                     <span className="ml-2">Seller</span>
                   </div>
                 </div>
@@ -76,7 +124,7 @@ const Register = () => {
                     </Link>
                   </small>
                 </label>
-                <small className="ml-1 text-red-600"></small>
+                <small className="ml-1 text-red-600">{error}</small>
               </div>
               <div className="form-control ">
                 <input
