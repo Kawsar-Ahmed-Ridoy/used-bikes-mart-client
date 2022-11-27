@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const BookingModal = ({modalItems, setModalItems}) => {
-
+const {user} = useContext(AuthContext)
 const { model , engine, mileage,  resale_price, condition, } = modalItems;
 console.log(modalItems);
   const handleSubmit = (event) => {
@@ -31,6 +32,7 @@ console.log(modalItems);
               name="name"
               type="name"
               disabled
+              defaultValue={user?.displayName}
               placeholder="Name"
               className="input input-bordered w-full"
             />
@@ -38,6 +40,7 @@ console.log(modalItems);
               name="email"
               type="email"
               disabled
+              defaultValue={user?.email}
               placeholder="Email"
               className="input input-bordered w-full"
             />
