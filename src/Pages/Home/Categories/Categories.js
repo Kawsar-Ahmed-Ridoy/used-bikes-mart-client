@@ -19,7 +19,7 @@ const Categories = () => {
       </div>
       <div className="flex justify-around text-center align-middle flex-wrap">
         {items.map((item) => (
-          <div key={item.id} className="card w-96 h-96 py-7 shadow-xl pb-0 mb-4">
+          <div key={item._id} className="card w-96 h-96 py-7 shadow-xl pb-0 mb-4">
             <figure>
               <img src={item.imgs} className='w-full' alt="Shoes" />
             </figure>

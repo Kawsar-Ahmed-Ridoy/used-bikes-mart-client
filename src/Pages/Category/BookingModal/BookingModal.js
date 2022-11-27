@@ -1,11 +1,16 @@
 import React from "react";
 
-const BookingModal = () => {
-    const handleSubmit = event =>{
-        event.preventDefault()
-    }
+const BookingModal = ({modalItems}) => {
+
+const { model , engine, mileage,  resale_price, condition, } = modalItems;
+console.log(modalItems);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+  };
   return (
     <>
+
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
@@ -36,28 +41,49 @@ const BookingModal = () => {
               type="text"
               disabled
               placeholder="Model"
+              defaultValue={`Model: ${model}`}
               className="input input-bordered w-full"
             />
 
             <div className="flex justify-between">
-            <input
-              type="text"
-              disabled
-              placeholder="Price"
-              className="input input-bordered w-48"
-            />
-            
-            <input
-              type="text"
-              disabled
-              placeholder="Condition"
-              className="input input-bordered w-48"
-            />
+              <input
+                type="text"
+                disabled
+                placeholder="Purchase"
+                defaultValue={`Engine: ${engine} cc`}
+                className="input input-bordered w-48"
+              />
+
+              <input
+                type="text"
+                disabled
+                placeholder="Condition"
+                defaultValue={`Mileage: ${mileage} kmpl`}
+                className="input input-bordered w-48"
+              />
+            </div>
+
+            <div className="flex justify-between">
+              <input
+                type="text"
+                disabled
+                placeholder="Price"
+                defaultValue={`Price: $${resale_price}`}
+                className="input input-bordered w-48"
+              />
+
+              <input
+                type="text"
+                disabled
+                placeholder="Condition"
+                defaultValue={`Condition: ${condition}`}
+                className="input input-bordered w-48"
+              />
             </div>
 
             <input
               name="phone"
-              type="text"
+              type="number"
               placeholder="Phone"
               className="input input-bordered w-full"
             />
