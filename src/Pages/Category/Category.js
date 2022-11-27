@@ -31,6 +31,7 @@ const Category = () => {
         <BookingModal
         key={modalItems._id}
         modalItems={modalItems}
+        setModalItems={setModalItems}
         ></BookingModal>
       }
       

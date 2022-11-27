@@ -1,12 +1,18 @@
 import React from "react";
+import toast from "react-hot-toast";
 
-const BookingModal = ({modalItems}) => {
+const BookingModal = ({modalItems, setModalItems}) => {
 
 const { model , engine, mileage,  resale_price, condition, } = modalItems;
 console.log(modalItems);
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    const form = event.target;
+    const phone = form.phone.value;
+    const location = form.locations.value
+    console.log(phone, location);
+    setModalItems(null)
+    toast.success('Item Booked Successfully')
   };
   return (
     <>
@@ -20,8 +26,7 @@ console.log(modalItems);
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold mb-10">Name</h3>
-          <form onClick={handleSubmit} className="grid grid-cols-1 gap-5">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-5 mt-5">
             <input
               name="name"
               type="name"
@@ -88,7 +93,7 @@ console.log(modalItems);
               className="input input-bordered w-full"
             />
             <input
-              name="location"
+              name="locations"
               type="text"
               placeholder="Location"
               className="input input-bordered w-full"
