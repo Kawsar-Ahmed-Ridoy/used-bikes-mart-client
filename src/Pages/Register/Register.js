@@ -31,9 +31,7 @@ const Register = () => {
         toast.success("User Created Successfully");
         const userInfo = {
           displayName: name,
-          reloadListener: radio,
           photoURL: radio,
-          tenantId: radio
         };
 
         updateUser(userInfo)
@@ -90,7 +88,7 @@ const Register = () => {
                       type="radio"
                       name="gander"
                       className="radio"
-                      value="buyer"
+                      value=""
                       required
                     />
                     <span className="ml-2 mr-6">Buyer</span>

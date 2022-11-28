@@ -1,9 +1,12 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import Loading from '../../Shared/Loading/Loading'
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthProvider";
 
 const Categories = () => {
   const [items, setItems] = useState([]);
+  const {loading} = useContext(AuthContext)
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_API_URL}/itemsKey`)
@@ -11,7 +14,12 @@ const Categories = () => {
         setItems(res.data)
       })
   }, []);
+
+  if(loading){
+    return <Loading></Loading>
+  }
   return (
+    
     <div className="mb-16 max-w-screen-xl mx-auto">
       <div className="mb-8">
         <h2 className="text-center text-4xl font-bold ">

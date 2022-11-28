@@ -2,22 +2,80 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../contexts/AuthProvider";
 
-const BookingModal = ({modalItems, setModalItems}) => {
-const {user} = useContext(AuthContext)
-const { model , engine, mileage,  resale_price, condition, } = modalItems;
-console.log(modalItems);
+const BookingModal = ({ modalItems, setModalItems }) => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+  const {
+    category_id,
+    brand,
+    model,
+    manufacture,
+    engine,
+    mileage,
+    original_price,
+    resale_price,
+    condition,
+    seller_name,
+    years_use,
+    location,
+    published_date,
+    image,
+    details,
+    status
+  } = modalItems;
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const phone = form.phone.value;
-    const location = form.locations.value
+    const locations = form.locations.value;
     console.log(phone, location);
-    setModalItems(null)
-    toast.success('Item Booked Successfully')
+
+    const productBooking = {
+      category_id,
+      brand,
+      model,
+      manufacture,
+      engine,
+      mileage,
+      original_price,
+      resale_price,
+      condition,
+      seller_name,
+      years_use,
+      location,
+      published_date,
+      image,
+      details,
+      status,
+      locations,
+      phone,
+      name: user?.displayName,
+      email: user?.email
+    };
+    console.log(productBooking);
+
+    fetch("http://localhost:5000/ordersBook", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("access-token")}`
+      },
+      body: JSON.stringify(productBooking)
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          setModalItems(null);
+          toast.success("Item Booked Successfully");
+        }
+      })
+      .catch((err) => console.error(err));
   };
+
   return (
     <>
-
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
       <div className="modal">
         <div className="modal-box relative">
@@ -94,12 +152,14 @@ console.log(modalItems);
               type="number"
               placeholder="Phone"
               className="input input-bordered w-full"
+              required
             />
             <input
               name="locations"
               type="text"
               placeholder="Location"
               className="input input-bordered w-full"
+              required
             />
             <input
               className="btn btn-primary text-accent w-full"
