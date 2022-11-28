@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -5,9 +6,10 @@ const Categories = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/itemsKey")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
+    axios.get(`${process.env.REACT_APP_API_URL}/itemsKey`)
+      .then((res) => {
+        setItems(res.data)
+      })
   }, []);
   return (
     <div className="mb-16 max-w-screen-xl mx-auto">

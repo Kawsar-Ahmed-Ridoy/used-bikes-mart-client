@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { setAuthToken } from "../../api/auth";
 import { AuthContext } from "../../contexts/AuthProvider";
 import SocialLogin from "../Home/SocialLogin/SocialLogin";
 
@@ -26,7 +27,8 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        toast.success('User Created Successfully')
+        setAuthToken(result.user);
+        toast.success("User Created Successfully");
         const userInfo = {
           displayName: name,
           reloadListener: radio,

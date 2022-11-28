@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path:'/category/:id',
                 element: <PrivateRoute><Category></Category></PrivateRoute>,
-                loader: ({params})=> fetch(`http://localhost:5000/usedBikeData/${params.id}`)
+                loader: ({params})=> fetch(`${process.env.REACT_APP_API_URL}/usedBikeData/${params.id}`)
             },
             {
                 path: '/login',

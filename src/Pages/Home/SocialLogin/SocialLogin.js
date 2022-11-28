@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { setAuthToken } from '../../../api/auth';
 import { AuthContext } from '../../../contexts/AuthProvider';
 
 const SocialLogin = () => {
@@ -14,6 +16,8 @@ const SocialLogin = () => {
       const user = result.user;
       console.log(user);
       setLoading(false);
+      toast.success('Login Successfully')
+      setAuthToken(result.user)
       navigate(from, {replace: true})
     })
     .catch(err => console.log(err))
