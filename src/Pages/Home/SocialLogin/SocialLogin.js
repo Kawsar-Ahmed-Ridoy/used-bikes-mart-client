@@ -17,7 +17,7 @@ const SocialLogin = () => {
       console.log(user);
       setLoading(false);
       toast.success('Login Successfully')
-      setAuthToken(result.user)
+      setAuthToken(user)
       navigate(from, {replace: true})
     })
     .catch(err => console.log(err))

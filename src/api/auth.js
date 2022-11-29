@@ -1,6 +1,8 @@
-export const setAuthToken = user =>{
+export const setAuthToken = (user, radio, name) =>{
     const currentUser = {
         email: user.email,
+        name: name,
+        seller: radio
     }
 
     fetch(`${process.env.REACT_APP_API_URL}/user/${user?.email}`, {

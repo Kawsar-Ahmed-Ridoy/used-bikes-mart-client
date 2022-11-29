@@ -27,11 +27,10 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        setAuthToken(result.user);
+        setAuthToken(user, radio, name);
         toast.success("User Created Successfully");
         const userInfo = {
           displayName: name,
-          photoURL: radio,
         };
 
         updateUser(userInfo)

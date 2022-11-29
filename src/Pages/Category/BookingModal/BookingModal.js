@@ -4,7 +4,6 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 
 const BookingModal = ({ modalItems, setModalItems }) => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const {
     category_id,
     brand,

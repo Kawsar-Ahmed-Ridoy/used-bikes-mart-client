@@ -18,9 +18,9 @@ const Order = ({ myOrder }) => {
         </div>
       </div>
 
-      <div>
+      <div className="max-w-xs center"> 
         <h5 className="font-bold text-center">Location</h5>
-        <p className="center">Lorem ipsum dolor sit amet consectetur adipisicing !</p>
+        <p className="text-center">{locations}</p>
       </div>
 
       <div>
