@@ -42,15 +42,19 @@ const Navbar = () => {
 
             {user?.uid ? (
               <Link to="/myorders">
-                <li className="font-bold mx-4">My Orders</li>
+                <li className="font-bold">My Orders</li>
               </Link>
             ) : (
               <></>
             )}
 
+            <Link to="/reporteditems">
+              <li className="font-bold">Reported Items</li>
+            </Link>
+
             {user?.uid ? (
               <Link to="/dashboard">
-                <li className="font-bold mx-4">Dashboard</li>
+                <li className="font-bold">Dashboard</li>
               </Link>
             ) : (
               <></>
@@ -81,6 +85,10 @@ const Navbar = () => {
           ) : (
             <></>
           )}
+
+          <Link to="/reporteditems">
+            <li className="font-bold mx-4">Reported Items</li>
+          </Link>
 
           {user?.uid ? (
             <Link to="/dashboard">

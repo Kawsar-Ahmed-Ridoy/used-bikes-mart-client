@@ -7,7 +7,7 @@ const Order = ({ myOrder }) => {
     <div className=" w-full border h-28 flex  justify-between items-center flex-wrap px-4 ">
       <div className="flex items-center space-x-3">
         <div className="avatar">
-          <div className="mask mask-squircle w-24 h-24">
+          <div className="mask rounded-md w-24 h-24">
             <img src={image} alt="Avatar Tailwind CSS Component" />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "../../ErrorPage/ErrorPage";
 import Main from "../../Layout/Main";
+import AddProduct from "../../Pages/AddProduct/AddProduct";
 import Blog from "../../Pages/Blog/Blog";
 import Category from "../../Pages/Category/Category";
 import Dashboard from "../../Pages/Dashboard/Dashboard";
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
             {
                 path: '/reporteditems',
                 element: <ReportedItems></ReportedItems>
+            },
+            {
+                path: '/addproduct',
+                element: <AddProduct></AddProduct>,
+                
             }
             
         ]

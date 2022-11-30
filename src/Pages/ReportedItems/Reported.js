@@ -31,7 +31,7 @@ const Reported = ({report}) => {
               <div className="">
               <span>Post: {report.published_date}</span> <br/>
               <span>Location: {report.location}</span> <br/>
-              <p>Details: {report.details.slice(0, 120)+ "read-more..."}</p>
+              <p>Details: {report.details.slice(0, 50)+ "read-more..."}</p>
               </div>
 
             </div>

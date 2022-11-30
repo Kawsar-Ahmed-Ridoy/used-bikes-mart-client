@@ -56,7 +56,7 @@ const Items = ({category, setModalItems}) => {
               <div className="">
               <span>Post: {category.published_date}</span> <br/>
               <span>Location: {category.location}</span> <br/>
-              <p>Details: {category.details.slice(0, 120)+ "read-more..."}</p>
+              <p>Details: {category.details.slice(0, 50)+ "read-more..."}</p>
               </div>
               <div className="card-actions justify-between">
               {/* category_id, brand, model , manufacture, engine, mileage, original_Price, resale_Price, condition, seller_name, years_use, location, published_date, image, details */}

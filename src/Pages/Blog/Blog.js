@@ -8,9 +8,9 @@ const Blog = () => {
         <p className="text-center  text-gray-500">__________________</p>
       </div>
       <div className="flex justify-around text-center align-middle flex-wrap">
-        <div className="card w-96 bg-base-100 shadow-xl mb-6">
-          <div className="card-body">
-            <h2 className="card-title">
+        <div className="card w-96 bg-base-100 shadow-xl mb-6 bg-primary text-accent">
+          <div className="card-body ">
+            <h2 className="card-title text-2xl">
               What are the different ways to manage a state in a React
               application?
             </h2>
@@ -44,10 +44,10 @@ const Blog = () => {
             </p>
           </div>
         </div>
-        <div className="card w-96 bg-base-100 shadow-xl mb-6">
+        <div className="card w-96 bg-base-100 shadow-xl mb-6 bg-primary text-accent">
           <div className="card-body">
-            <h2 className="card-title">
-              How does prototypical inheritance work?
+            <h2 className="card-title text-2xl">
+              How does prototypical inheritance <br/> work?
             </h2>
             <p>
               JavaScript objects are dynamic "bags" of properties (referred to
@@ -73,10 +73,10 @@ const Blog = () => {
             </p>
           </div>
         </div>
-        <div className="card w-96 bg-base-100 shadow-xl mb-6">
+        <div className="card w-96 bg-base-100 shadow-xl mb-6 bg-primary text-accent">
           <div className="card-body">
-            <h2 className="card-title">
-              What is a unit test? Why should we write unit tests?
+            <h2 className="card-title text-2xl">
+              What is a unit test? Why should we write unit <br/> tests?
             </h2>
             <p>
               A unit test typically comprises of three stages: plan, cases and
@@ -106,9 +106,9 @@ const Blog = () => {
             </p>
           </div>
         </div>
-        <div className="card w-96 bg-base-100 shadow-xl mb-6">
+        <div className="card w-96 bg-base-100 shadow-xl mb-6 bg-primary text-accent">
           <div className="card-body">
-            <h2 className="card-title">React vs. Angular vs. Vue?</h2>
+            <h2 className="card-title text-center text-2xl">React vs. Angular vs. Vue?</h2>
             <p>
               <strong>Angular vs React</strong> If the choice you’re making is based on Angular
               vs React alone, then you’ll simply need to consider the pros and

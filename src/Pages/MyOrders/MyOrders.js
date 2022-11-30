@@ -24,7 +24,6 @@ const MyOrders = () => {
       .catch((err) => console.error(err));
   }, [user?.email, logOut]);
 
-  console.log(myOrders);
   return (
     <div className="mb-16 max-w-screen-xl mx-auto">
       <div className="my-8">
