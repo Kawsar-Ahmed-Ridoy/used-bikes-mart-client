@@ -10,7 +10,7 @@ const Navbar = () => {
       .catch((err) => console.log(err));
   };
   return (
-    <div className="navbar bg-base-100 px-8 sticky top-0 z-50 bg-gray-100">
+    <div className="navbar  px-8 sticky top-0 z-50 bg-gray-100">
       <div className="navbar-start ">
         <div className="dropdown text-primary">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

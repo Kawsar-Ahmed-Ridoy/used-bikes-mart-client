@@ -1,9 +1,7 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../contexts/AuthProvider';
-const AddProduct = ({users}) => {
+import React from 'react';
+const AddProduct = () => {
     
-    const { user } = useContext(AuthContext);
-console.log(users);
+
 
     return (
         <div className="mb-16 max-w-screen-xl mx-auto">
@@ -17,102 +15,113 @@ console.log(users);
             <input
               name="name"
               type="name"
-              disabled
-              defaultValue={user?.displayName}
               placeholder="Name"
               className="input input-bordered w-full"
+              required
             />
+              <input
+                type="text"
+                placeholder="Model"
+                className="input input-bordered w-full"
+                required
+              />
             <input
-              name="email"
-              type="email"
-              disabled
-              defaultValue={user?.email}
-              placeholder="Email"
+              name="files"
+              type="file"
+              placeholder="Image"
               className="input input-bordered w-full"
+              required
             />
 
+
+            <div className="flex justify-between">
+              <input
+              name='manufacture'
+                type="number"
+                placeholder="Manufacture Year"
+                className="input input-bordered w-48"
+                required
+              />
+
+              <input
+              name='engine'
+                type="number"
+                placeholder="Engine cc"
+                className="input input-bordered w-48"
+                required
+              />
+            </div>
+            <div className="flex justify-between">
+              <input
+              name='mileage'
+                type="number"
+                placeholder="Mileage"
+                className="input input-bordered w-48"
+                required
+              />
+
+              <input
+              name='original_price'
+                type="number"
+                placeholder="Market Price"
+                className="input input-bordered w-48"
+                required
+              />
+            </div>
+            <div className="flex justify-between">
+              <input
+              name='resale_price'
+                type="number"
+                placeholder="Resale Price"
+                className="input input-bordered w-48"
+                required
+              />
+
+              <input
+              name='years_use'
+                type="number"
+                placeholder="Years Of Use"
+                className="input input-bordered w-48"
+                required
+              />
+            </div>
+
+            <div className="flex justify-between">
+              <input
+              name='published_date'
+                type="date"
+                className="input input-bordered w-48"
+                required
+              />
+
+              <input
+                type="text"
+                placeholder="Condition: Good, Fair"
+                className="input input-bordered w-48"
+                required
+              />
+            </div>
+            <span className='text-center text-primary font-bold'>Category</span>
+            <div className="flex justify-between">
+              <div className="">
+                <input name="gander" type="radio" value='1' className="radio " required/>
+                <label htmlFor="">YAMAHA</label>
+              </div>
+              <div className="">
+                <input name="gander" type="radio" value='2' className="radio" required/>
+                <label htmlFor="">SUZUKI</label>
+              </div>
+              <div className="">
+                <input name="gander" type="radio" value='3' className="radio" required/>
+                <label htmlFor="">KTM</label>
+              </div>
+            </div>
+            
+
             <input
+              name="details"
               type="text"
-              disabled
-              placeholder="Model"
-              defaultValue={`Model: `}
-              className="input input-bordered w-full"
-            />
-
-            <div className="flex justify-between">
-              <input
-                type="text"
-                disabled
-                placeholder="Purchase"
-                defaultValue={`Engine:  cc`}
-                className="input input-bordered w-48"
-              />
-
-              <input
-                type="text"
-                disabled
-                placeholder="Condition"
-                defaultValue={`Mileage:  kmpl`}
-                className="input input-bordered w-48"
-              />
-            </div>
-            <div className="flex justify-between">
-              <input
-                type="text"
-                disabled
-                placeholder="Purchase"
-                defaultValue={`Engine:  cc`}
-                className="input input-bordered w-48"
-              />
-
-              <input
-                type="text"
-                disabled
-                placeholder="Condition"
-                defaultValue={`Mileage:  kmpl`}
-                className="input input-bordered w-48"
-              />
-            </div>
-            <div className="flex justify-between">
-              <input
-                type="text"
-                disabled
-                placeholder="Purchase"
-                defaultValue={`Engine:  cc`}
-                className="input input-bordered w-48"
-              />
-
-              <input
-                type="text"
-                disabled
-                placeholder="Condition"
-                defaultValue={`Mileage:  kmpl`}
-                className="input input-bordered w-48"
-              />
-            </div>
-
-            <div className="flex justify-between">
-              <input
-                type="text"
-                disabled
-                placeholder="Price"
-                defaultValue={`Price: $`}
-                className="input input-bordered w-48"
-              />
-
-              <input
-                type="text"
-                disabled
-                placeholder="Condition"
-                defaultValue={`Condition: `}
-                className="input input-bordered w-48"
-              />
-            </div>
-
-            <input
-              name="phone"
-              type="number"
-              placeholder="Phone"
+              placeholder="Description"
               className="input input-bordered w-full"
               required
             />
