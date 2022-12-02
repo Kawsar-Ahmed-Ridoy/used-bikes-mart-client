@@ -9,7 +9,7 @@ const ReportedItems = () => {
     const {loading} = useContext(AuthContext)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/reportedItem')
+        axios.get(`${process.env.REACT_APP_API_URL}/reportedItem`)
         .then((res) => {
             setReported(res.data)
         })

@@ -8,7 +8,7 @@ const Dashboard = () => {
     const [userLoad, setUserLoad] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users?email=${user?.email}`, {
+        fetch(`${process.env.REACT_APP_API_URL}/users?email=${user?.email}`, {
           headers: {
             authorization: `Bearer ${localStorage.getItem("access-token")}`
           }

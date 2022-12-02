@@ -5,7 +5,7 @@ import { FaCheckCircle } from 'react-icons/fa';
 const Items = ({category, setModalItems}) => {
   const handleReport = ()=>{
     
-    fetch("http://localhost:5000/reportedItem", {
+    fetch(`${process.env.REACT_APP_API_URL}/reportedItem`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

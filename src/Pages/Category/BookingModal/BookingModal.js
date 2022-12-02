@@ -54,7 +54,7 @@ const BookingModal = ({ modalItems, setModalItems }) => {
     };
     console.log(productBooking);
 
-    fetch("http://localhost:5000/ordersBook", {
+    fetch(`${process.env.REACT_APP_API_URL}/ordersBook`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
